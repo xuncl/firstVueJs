@@ -1,5 +1,13 @@
 <template>
   <div class="hello">
+
+  <div>
+    <h1>{{ sss }}</h1>
+    <ol>
+      <li v-for="item in items" v-bind:class="[{finish:item.ifFinished},liClass]">{{item.label}}</li>
+      </ol>
+  </div>
+
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -23,9 +31,21 @@
 <script>
 export default {
   name: 'HelloWorld',
-  data () {
+  data: function () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App xuncl2',
+      sss: 8888,
+      items: [
+        {
+          label: 'coding',
+          ifFinished: true
+        },
+        {
+          label: 'walking',
+          ifFinished: false
+        }
+      ],
+      liClass: 'thisisli'
     }
   }
 }
@@ -33,10 +53,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.finish{
+  color: #42b983;
+}
+.thisisli{
+  background: yellow;
+}
 h1, h2 {
   font-weight: normal;
-}
-ul {
+
+}ul {
   list-style-type: none;
   padding: 0;
 }
