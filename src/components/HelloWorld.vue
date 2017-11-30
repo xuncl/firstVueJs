@@ -3,8 +3,9 @@
 
   <div>
     <h1>{{ sss }}</h1>
+    <input v-model="newItem" v-on:keyup.enter="onEnter">
     <ol>
-      <li v-for="item in items" v-bind:class="[{finish:item.ifFinished},liClass]">{{item.label}}</li>
+      <li v-for="item in items" v-bind:class="[{finish:item.ifFinished},liClass]" @click="toggle(item)">{{item.label}}</li>
       </ol>
   </div>
 
@@ -31,10 +32,10 @@
 <script>
 export default {
   name: 'HelloWorld',
-  data: function () {
+  data () {
     return {
       msg: 'Welcome to Your Vue.js App xuncl2',
-      sss: 8888,
+      sss: 'This is a todo list:',
       items: [
         {
           label: 'coding',
@@ -45,7 +46,19 @@ export default {
           ifFinished: false
         }
       ],
-      liClass: 'thisisli'
+      liClass: 'thisisli',
+      newItem: ''
+    }
+  },
+  methods: {
+    toggle: function (e) {
+      // 置反
+      console.log(e.ifFinished = !e.ifFinished)
+    },
+    onEnter () {
+      console.log(this.newItem)
+      this.items.push({label: this.newItem, ifFinished: false})
+      this.newItem = ''
     }
   }
 }
