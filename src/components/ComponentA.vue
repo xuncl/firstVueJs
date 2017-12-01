@@ -12,10 +12,10 @@
         msg: 'Hello ComponentA'
       }
     },
-    props: [ 'msgfromfather' ],
+    props: [ 'msgFromFather' ],
     methods: {
       onClickMe () {
-        alert('A' + this.msgfromfather)
+        alert('A' + this.msgFromFather)
       }
     }
   }

@@ -13,7 +13,7 @@
 
     <hr>
     <h2>组件模板：驼峰转中线</h2>
-    <component-a msgfromfather="you die!"></component-a>
+    <component-a msg-from-father="you die!"></component-a>
 
     <h2>Essential Links</h2>
     <ul>
