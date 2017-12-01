@@ -16,6 +16,7 @@
     methods: {
       onClickMe () {
         alert('A' + this.msgFromFather)
+        this.$emit('clild-tell-me-sth', this.msg)
       }
     }
   }

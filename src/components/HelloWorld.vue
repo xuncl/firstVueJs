@@ -13,8 +13,7 @@
 
     <hr>
     <h2>组件模板：驼峰转中线</h2>
-    <component-a msg-from-father="you die!"></component-a>
-
+    <component-a msg-from-father="you die!" v-on:clild-tell-me-sth="listenToMyBoy"></component-a>
     <h2>Essential Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -58,6 +57,9 @@ export default {
       console.log(this.newItem)
       this.items.push({label: this.newItem, ifFinished: false})
       this.newItem = ''
+    },
+    listenToMyBoy (arg) {
+      this.sss = this.sss + arg
     }
   },
   watch: {
