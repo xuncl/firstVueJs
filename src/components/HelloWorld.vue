@@ -10,6 +10,11 @@
   </div>
 
     <h1>{{ msg }}</h1>
+
+    <hr>
+    <h2>组件模板：驼峰转中线</h2>
+    <component-a></component-a>
+
     <h2>Essential Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -32,6 +37,7 @@
 <script>
 import Store from '../store'
 // console.log(Store)
+import ComponentA from './ComponentA'
 export default {
   name: 'HelloWorld',
   data () {
@@ -62,7 +68,8 @@ export default {
       },
       deep: true
     }
-  }
+  },
+  components: { ComponentA }
 }
 </script>
 
