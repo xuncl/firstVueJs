@@ -30,22 +30,15 @@
 </template>
 
 <script>
+import Store from '../store'
+// console.log(Store)
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App xuncl2',
       sss: 'This is a todo list:',
-      items: [
-        {
-          label: 'coding',
-          ifFinished: true
-        },
-        {
-          label: 'walking',
-          ifFinished: false
-        }
-      ],
+      items: Store.fetch(),
       liClass: 'thisisli',
       newItem: ''
     }
@@ -59,6 +52,15 @@ export default {
       console.log(this.newItem)
       this.items.push({label: this.newItem, ifFinished: false})
       this.newItem = ''
+    }
+  },
+  watch: {
+    items: {
+      handler (val, oldVal) {
+        console.log(val)
+        Store.save(val)
+      },
+      deep: true
     }
   }
 }
